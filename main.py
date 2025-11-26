@@ -113,8 +113,14 @@ def capturar_datos_estudiante():
     # 5. Dos carreras (AI)
     if preguntar_si_no("\n5) ¿Estás estudiando otra carrera simultáneamente?"):
         hechos_usuario.add(c.DOS_CARRERAS)
-        
+
     return nombre, hechos_usuario
+
+
+def imprimir_despedida(nombre):
+    print("\n¡Gracias por contarme tu situación, {0}!".format(nombre))
+    print("Recordá que cada paso que das te acerca a tu objetivo académico. 💪")
+    print("Seguí adelante con confianza: ¡tenés todo para lograrlo! 🚀")
 
 # --- BLOQUE PRINCIPAL PARA PROBAR ---
 
@@ -142,5 +148,7 @@ if __name__ == "__main__":
     print("-" * 50)
     
     # EJECUTAMOS EL MOTOR CON LOS DATOS OBTENIDOS
-   
+
     motor.ejecutar_motor(perfil_detectado)
+
+    imprimir_despedida(nombre_alumno)
